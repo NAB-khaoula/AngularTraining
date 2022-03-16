@@ -9,11 +9,14 @@ body.innerHTML = `
 <div>
 <input type="text" placeholder="Please enter your item" id="inputValue">
 <button id="addButton">ADD ITEM</button>
+<input type="text" placeholder="Please enter the item you want to delete" id="deleteValue">
+<button id="deleteButton">Delete Item</button>
 <ul id="groceryList"></ul>
 </div>`
 
 
 let inputValue = document.getElementById('inputValue') as HTMLInputElement;
+let deleteValue = document.getElementById('deleteValue') as HTMLInputElement;
 const groceryList = document.getElementById('groceryList');
 class ShoppingList {
 	groceries: string[] = [];
@@ -44,13 +47,13 @@ class ShoppingList {
 		})
 	};
 
-	// deleteEvent = () => {
-	// 	const liElement = document.querySelector('ul')
-	// 	liElement.addEventListener('click', (e) => {
-	// 		this.deleteItem(document.getElementById('inputValue').value);
-	// 		this.render();
-	// 	})
-	// };
+	deleteEvent = () => {
+		const deleteButton = document.querySelector('#deleteButton')
+		deleteButton.addEventListener('click', (e) => {
+			this.deleteItem(deleteValue.value);
+			this.render();
+		})
+	};
 
 	// searchEvent = () => {
 	// 	inputValue.addEventListener('input', (e) =>{
@@ -65,6 +68,6 @@ class ShoppingList {
 let myList: ShoppingList = new ShoppingList();
 
 myList.addEvent();
-// myList.deleteEvent();
+myList.deleteEvent();
 // myList.searchEvent();
 
