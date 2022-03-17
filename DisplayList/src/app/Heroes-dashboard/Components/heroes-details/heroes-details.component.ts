@@ -11,7 +11,6 @@ export class HeroesDetailsComponent implements OnInit{
 
     @Input()
     hero?: Hero;
-    // test: string;
     ngOnInit(): void {
     }
 
