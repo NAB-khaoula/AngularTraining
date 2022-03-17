@@ -7,20 +7,4 @@
         </li>
     </ul>
 </div>
-
-<div *ngIf="itemDetails">
-    <h6>Hero's Name: {{itemDetails.name | uppercase }}</h6>
-    <h6>Hero's Weapons: {{itemDetails.Weapons}}</h6>
-    <h6>Hero's Creation Year: {{itemDetails.creationYear}}</h6>
-    <h6>Hero's SuperPower: 
-        <ul>
-            <li *ngFor="let superP of itemDetails.superPower">
-                {{superP}}
-            </li>
-        </ul>
-    </h6>
-    <div>
-      <label for="hero-name">Hero name: </label>
-      <input id="hero-name" placeholder="name" [(ngModel)]="itemDetails.name">
-    </div>
-</div>
+<heroes-details [hero]="itemDetails" ></heroes-details>

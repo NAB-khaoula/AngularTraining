@@ -10,7 +10,8 @@ import { Hero } from "../../models/hero.interface";
 export class HeroesDetailsComponent implements OnInit{
 
     @Input()
-    items: Hero[] = [];
+    hero?: Hero;
+    // test: string;
     ngOnInit(): void {
     }
 

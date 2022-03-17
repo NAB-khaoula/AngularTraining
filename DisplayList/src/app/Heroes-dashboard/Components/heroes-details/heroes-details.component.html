@@ -1,1 +1,18 @@
 <h1>Here is the heroes-details component</h1>
+
+<div *ngIf="hero">
+    <h6>Hero's Name: {{hero.name | uppercase }}</h6>
+    <h6>Hero's Weapons: {{hero.Weapons}}</h6>
+    <h6>Hero's Creation Year: {{hero.creationYear}}</h6>
+    <h6>Hero's SuperPower: 
+        <ul>
+            <li *ngFor="let superP of hero.superPower">
+                {{superP}}
+            </li>
+        </ul>
+    </h6>
+    <div>
+      <label for="hero-name">Hero name: </label>
+      <input id="hero-name" placeholder="name" [(ngModel)]="hero.name">
+    </div>
+</div>
