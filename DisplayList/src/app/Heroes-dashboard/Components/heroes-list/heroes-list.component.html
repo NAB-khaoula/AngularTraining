@@ -3,7 +3,8 @@
 <div class="heroes">
     <ul>
         <li *ngFor="let item of items; let i = index" class='heroes'>
-            <span class="badge badge-info"> ID: {{i + 1}}</span> - <span class="btn btn-light" (click)="displayDetails(item)"> {{item.name}}</span>
+            <span class="badge badge-info"> ID: {{i + 1}}</span> - <button class="btn btn-light" (click)="displayDetails(item)"> {{item.name}}</button>
+            <button class="btn btn-dark" (click)="onSelect(item)">Display Message</button>
         </li>
     </ul>
 </div>

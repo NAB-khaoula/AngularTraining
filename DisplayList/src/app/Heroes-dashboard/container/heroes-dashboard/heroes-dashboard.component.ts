@@ -18,8 +18,11 @@ export class HeroesDashboardComponant implements OnInit{
     ngOnInit(): void {
         this.getHeroes();
     }
+
+
     getHeroes(): void{
-        this.heroes = this.heroService.getHeroes();
+        // This method allows us to get the hero data in an asynchronous way;
+        this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
     }
 
 }
