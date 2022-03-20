@@ -1,0 +1,19 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+<div *ngIf="hero">
+    <h6>Hero's Name: {{hero.name | uppercase }}</h6>
+    <h6>Hero's Weapons: {{hero.Weapons}}</h6>
+    <h6>Hero's Creation Year: {{hero.creationYear}}</h6>
+    <h6>Hero's SuperPower: 
+        <ul>
+            <li *ngFor="let superP of hero.superPower">
+                {{superP}}
+            </li>
+        </ul>
+    </h6>
+    <div>
+      <label for="hero-name">Hero name: ></label>
+      <input id="hero-name" placeholder="name" [(ngModel)]="hero.name">
+    </div>
+    <button type="button" class="btn btn-dark" (click)="goBack()">go back</button>
+</div>
