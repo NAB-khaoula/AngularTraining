@@ -2,7 +2,7 @@ import { Component, OnInit } from "@angular/core";
 
 import { Hero } from "../../models/hero.interface";
 
-import { HeroSevice } from "../../hero.service";
+import { HeroService } from "../../hero.service";
 
 @Component({
     selector: 'heroes-dashboard',
@@ -13,7 +13,7 @@ import { HeroSevice } from "../../hero.service";
 export class HeroesDashboardComponant implements OnInit{
     heroes: Hero[] = [];
 
-    constructor(private heroService: HeroSevice) {}
+    constructor(private heroService: HeroService) {}
 
     ngOnInit(): void {
         this.getHeroes();
@@ -22,7 +22,7 @@ export class HeroesDashboardComponant implements OnInit{
 
     getHeroes(): void{
         // This method allows us to get the hero data in an asynchronous way;
-        this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
+        this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes.slice(0, 3));
     }
 
 }
