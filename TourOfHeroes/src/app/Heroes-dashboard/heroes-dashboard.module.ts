@@ -7,9 +7,10 @@ import { RouterModule } from "@angular/router";
 import { HeroesDetailsComponent } from "./Components/heroes-details/heroes-details.component";
 import { HeroesListComponent } from "./Components/heroes-list/heroes-list.component";
 import { HeroesDashboardComponant } from "./container/heroes-dashboard/heroes-dashboard.component";
+import { HeroSearchComponent } from "./Components/heroes-search/heroes-search.component";
 
 @NgModule({
-    declarations: [HeroesDashboardComponant, HeroesDetailsComponent, HeroesListComponent],
+    declarations: [HeroesDashboardComponant, HeroesDetailsComponent, HeroesListComponent, HeroSearchComponent],
     imports: [BrowserModule, FormsModule, RouterModule],
     exports: [HeroesDashboardComponant]
 })
