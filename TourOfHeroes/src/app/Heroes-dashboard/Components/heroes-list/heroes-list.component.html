@@ -5,5 +5,17 @@
     <a routerLink="/Heroes-dashboard/Components/heroes-details/{{item.id}}">
       <span class="badge">{{item.id}}</span> {{item.name}}
     </a>
+    <button type="button" class="btn btn-dark delete" title="delete hero"
+    (click)="delete(item)">x</button>
   </li>
 </ul>
+
+<div>
+  <label for="new-hero">Hero name: </label>
+  <input id="new-hero" #heroName />
+
+  <!-- (click) passes input value to add() and then clears the input -->
+  <button type="button" class="btn btn-dark" (click)="add(heroName.value); heroName.value=''">
+    Add hero
+  </button>
+</div>
