@@ -1,0 +1,19 @@
+.Container{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: #1976d2;
+    padding: 20px 15px;
+    flex-wrap: wrap;
+}
+
+.Container h1{
+    color:white;
+}
+.Container a{
+    color:#1976d2;
+    height: 40px;
+}
+.Container i{
+    color: #1976d2;
+}

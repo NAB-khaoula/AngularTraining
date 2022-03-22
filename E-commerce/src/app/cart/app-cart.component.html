@@ -1,0 +1,24 @@
+<h3>Cart</h3>
+	<div *ngIf="getItems().length" class="cart">
+		<a routerLink="/shipping">Shipping Prices</a>
+		<div class="btn btn-light" *ngFor="let item of getItems()">
+			<span>{{ item.name }} </span>
+			<span>{{ item.price | currency }}</span>
+		</div>
+	</div>
+	
+	<form >
+		
+		<div class="input-group mb-3">
+			<label for="name"  class="input-group-text" >Name</label>
+			<input class="form-control" id="name" type="text" [(ngModel)]="checkoutForm.name" [ngModelOptions]="{standalone: true}">
+		</div>
+		
+		<div class="input-group mb-3">
+			<label for="address" class="input-group-text">Address</label>
+			<input class="form-control" id="address" type="text" [(ngModel)]="checkoutForm.address" [ngModelOptions]="{standalone: true}">
+		</div>
+		
+		<button class="btn btn-light" type="submit" (click)="onSubmit()">Purchase</button>
+		
+	</form>
