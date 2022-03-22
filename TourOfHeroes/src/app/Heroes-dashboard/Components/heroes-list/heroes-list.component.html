@@ -2,10 +2,9 @@
 
 <ul class="heroes">
   <li *ngFor="let item of items; let i = index">
-    <a routerLink="/Heroes-dashboard/Components/heroes-details/{{item.id}}">
-      <span class="badge">{{item.id}}</span> {{item.name}}
+    <a class="btn btn-light" routerLink="/Heroes-dashboard/Components/heroes-details/{{item.id}}"> {{item.id}} {{item.name}}
     </a>
-    <button type="button" class="btn btn-dark delete" title="delete hero"
+    <button type="button" class="delete" title="delete hero"
     (click)="delete(item)">x</button>
   </li>
 </ul>

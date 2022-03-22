@@ -1,0 +1,9 @@
+.cart{
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+h3{
+    padding: 10px;
+}
